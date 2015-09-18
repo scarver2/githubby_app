@@ -1,0 +1,17 @@
+# Disabled intentionally
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - 'bin/**/*'
+    - 'config/deploy/**/*'
+    - 'db/**/*'
+    - 'lib/**/*'
+    - 'spec/**/*'
+    - Gemfile
+    - Guardfile
+    - Vagrantfile
+
+LineLength:
+  Enabled: false # stupid spec, It's the 21st Century and wide-screen monitors
+
+
