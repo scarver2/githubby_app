@@ -5,3 +5,6 @@ deploy:
   app: githubbyapp
   run:
     - "rake db:migrate"
+language: ruby
+rvm:
+  - 2.2.3
