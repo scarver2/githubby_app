@@ -14,12 +14,6 @@ Code Quality
 Paginated and Filters AJAX requests
 Authentication
 
-##### Niceties
-
-OAuth Authentication
-Continuous Integration http://docs.travis-ci.com/user/deployment/heroku/
-
-
 ## Developer Notes
 
 ### Setup
