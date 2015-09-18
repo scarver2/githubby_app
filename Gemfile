@@ -43,7 +43,7 @@ group :production do
 end
 
 group :test do
-  # gem 'codeclimate-test-reporter', require: nil
+  gem 'codeclimate-test-reporter', require: nil
   gem 'capybara'
   gem 'guard-rspec'
   gem 'guard-rubocop'
