@@ -8,3 +8,6 @@ deploy:
 language: ruby
 rvm:
   - 2.2.3
+addons:
+  code_climate:
+    repo_token: 4e0a38a659d44eeb60160cadd22fc06a090679b5da47410515baf7c24d935d5a
