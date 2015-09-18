@@ -2,6 +2,9 @@
 
 An academic endeavor to learn the GitHub Search API based on Bookshout!'s https://gist.github.com/arturo-c/b7854caa4d87b1612630
 
+
+[![Code Climate](https://codeclimate.com/github/scarver2/githubby_app/badges/gpa.svg)](https://codeclimate.com/github/scarver2/githubby_app)
+
 ## Goals
 
 ### Demonstrate

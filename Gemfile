@@ -43,10 +43,11 @@ group :production do
 end
 
 group :test do
+  # gem 'codeclimate-test-reporter', require: nil
   gem 'capybara'
   gem 'guard-rspec'
   gem 'guard-rubocop'
-  gem 'guard-spork'
+  # gem 'guard-spork'
   gem 'rspec-expectations', require: 'rspec/expectations'
   gem 'simplecov', require: false
 end
