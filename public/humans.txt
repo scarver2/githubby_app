@@ -1,0 +1,20 @@
+GitHubby App
+http://githubbyapp.herokuapp.com/
+Source code: https://github.com/scarver2/githubby_app
+
+Created by Stan Carver II
+
+Inspired by Arturo C. at Bookshout! https://gist.github.com/arturo-c/b7854caa4d87b1612630
+
+GitHubby font http://vllg.com/constellation/apex-sans
+
+Use ZURB Foundation 5 for a great responsive experience
+http://foundation.zurb.com/
+http://foundation.zurb.com/templates/banded.html
+
+ZURB Fonts are nice too!
+
+
+Omniauth inspiration
+http://natashatherobot.com/rails-omniauth-github-tutorial/
+http://railscasts.com/episodes/241-simple-omniauth?view=asciicast
