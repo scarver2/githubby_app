@@ -6,8 +6,8 @@
         %p
           &copy;2015
           = link_to t('app_name'), 'http://githubbyapp.herokuapp.com/'
-          %span.version
-            = ENV['APPLICATION_VERSION']
+          by
+          = link_to 'Stan Carver II', 'http://scarver2.github.io/'
       .large-6.columns
-        .text-right
-          = t('app_author')
+        .text-right.version
+          = ENV['APPLICATION_VERSION']
