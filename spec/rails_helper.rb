@@ -26,6 +26,22 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 OmniAuth.config.test_mode = true
+# omniauth_hash = { 'provider' => 'github',
+#                   'uid' => '123456',
+#                   'info' => {
+#                     'name' => 'Bubba Gump',
+#                     'email' => 'bubba@gump.com',
+#                     'nickname' => 'bubba'
+#                   },
+#                   'extra' => {
+#                     'raw_info' =>
+#                       { 'location' => 'New Orleans',
+#                         'gravatar_id' => '123456789'
+#                       }
+#                   }
+#                 }
+# OmniAuth.config.add_mock(:github, omniauth_hash)
+OmniAuth.config.add_mock(:github, FactoryGirl.build(:omniauth_github_hash))
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

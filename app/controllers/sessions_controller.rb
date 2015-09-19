@@ -2,15 +2,19 @@
 # Provides authentication functions
 class SessionsController < ApplicationController
   def create
-    auth = request.env['omniauth.auth']
-    user = User.find_by_provider_and_uid(auth['provider'], auth['uid']) || CreateUserFromOauth.call(auth)
-    # User.create_with_omniauth(auth)
+    user = FindUserByOauth.call(auth) || CreateUserFromOauth.call(auth)
     session[:user_id] = user.id
-    redirect_to root_url, notice: 'Signed in!'
+    redirect_to root_url, notice: I18n.t('logged_in')
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: 'Signed out!'
+    redirect_to root_url, notice: I18n.t('logged_in')
+  end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
   end
 end

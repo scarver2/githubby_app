@@ -6,6 +6,8 @@
         %p
           &copy;2015
           = link_to t('app_name'), 'http://githubbyapp.herokuapp.com/'
+          %span.version
+            = ENV['APPLICATION_VERSION']
       .large-6.columns
         .text-right
           = t('app_author')

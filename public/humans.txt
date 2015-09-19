@@ -17,4 +17,3 @@ ZURB Fonts are nice too!
 
 Omniauth inspiration
 http://natashatherobot.com/rails-omniauth-github-tutorial/
-http://railscasts.com/episodes/241-simple-omniauth?view=asciicast

@@ -3,9 +3,9 @@ AllCops:
   DisplayCopNames: true
   Exclude:
     - 'bin/**/*'
-    - 'config/deploy/**/*'
-    - 'db/**/*'
-    - 'lib/**/*'
+    - 'config/initializers/simple_form.rb'
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
     - 'spec/**/*'
     - Gemfile
     - Guardfile

@@ -1,22 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe CreateUserFromOauth, type: :model do
-  let(:auth) {
-    Hash.new(
-      'provider' => 'github',
-      'uid' => '1234',
-      'info' => {
-        'name' => 'Bubba Gump'
-      }
-    )
-  }
-  
+  let(:auth) { FactoryGirl.build(:omniauth_github_hash) }
+
   it 'creates user' do
-    # expect to increase users by one
-    CreateUserFromOauth.call(auth)
-    expect(User.count).to eq 1
-    # user.provider = auth['']
-    # user.uid = auth['uid']
-    # user.name = auth['info']['name']
+    expect {
+      CreateUserFromOauth.call(auth)
+    }.to change{ User.count }.by(1)
+    user = User.last
+    expect(user.provider).to eq 'github'
+    expect(user.uid).to eq '123456'
+    expect(user.name).to eq 'Bubba Gump'
   end
 end

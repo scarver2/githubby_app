@@ -1,5 +1,5 @@
 # Create User From Oauth
-# creates a user model using OAuth parameters
+# Creates a user model using OAuth parameters
 class CreateUserFromOauth
   class << self
     def call(auth)
