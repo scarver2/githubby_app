@@ -4,8 +4,9 @@ ruby '2.2.3'
 
 gem 'rails', '4.2.4'
 
+gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'coffee-rails', '~> 4.1.0'
-# gem 'devise'
+gem 'devise'
 gem 'figaro'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
