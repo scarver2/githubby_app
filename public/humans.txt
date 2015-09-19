@@ -15,5 +15,6 @@ http://foundation.zurb.com/templates/banded.html
 ZURB Fonts are nice too!
 
 
-Omniauth inspiration
+Omniauth inspiration by Natasha the Robot
 http://natashatherobot.com/rails-omniauth-github-tutorial/
+http://natashatherobot.com/rails-test-omniauth-sessions-controller/
