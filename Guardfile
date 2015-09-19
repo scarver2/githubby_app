@@ -15,9 +15,9 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard 'reek' do
-  watch(%r{.+\.rb$})
-end
+# guard 'reek' do
+#   watch(%r{.+\.rb$})
+# end
 
 # Note: The cmd option is now required due to the increasing number of ways
 #       rspec may be run, below are examples of the most common uses.
@@ -78,13 +78,11 @@ guard :rubocop do
   watch(%r{(?:.+/)?\.rubocop\.yml$}) { |m| File.dirname(m[0]) }
 end
 
-# guard :spork, :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+# guard :spork, :rspec_env => { 'RAILS_ENV' => 'test' } do
 #   watch('config/application.rb')
 #   watch('config/environment.rb')
 #   watch('config/environments/test.rb')
 #   watch(%r{^config/initializers/.+\.rb$})
 #   watch('Gemfile.lock')
 #   watch('spec/spec_helper.rb') { :rspec }
-#   watch('test/test_helper.rb') { :test_unit }
-#   watch(%r{features/support/}) { :cucumber }
 # end
