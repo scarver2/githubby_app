@@ -1,0 +1,9 @@
+- if current_user
+  = %w(Aloha Hello Hola Howdy Shalom).sample
+  #{current_user.name}
+  = link_to logout_path, title: t('logout') do
+    %i.fi-power
+- else
+  = link_to '/auth/github', class: 'button' do
+    %i.fi-social-github{title: 'GitHub'}
+    = t('login')

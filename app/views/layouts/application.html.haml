@@ -16,4 +16,6 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tag
   %body
+    = render 'header'
     = yield
+    = render 'footer'

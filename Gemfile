@@ -7,12 +7,13 @@ gem 'rails', '4.2.4'
 gem 'coffee-rails', '~> 4.1.0'
 # gem 'devise'
 gem 'figaro'
+gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 # gem 'omniauth'
-# gem 'omniauth-github'
+gem 'omniauth-github'
 gem 'sass-rails', '~> 5.0'
 # gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
@@ -23,6 +24,7 @@ group :development do
     gem 'better_errors'
     gem 'binding_of_caller'
   end
+  gem 'awesome_print'
   gem 'bullet'
   gem 'guard'
   gem 'i18n-tasks'
@@ -46,6 +48,7 @@ end
 group :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'guard-rspec'
   gem 'guard-rubocop'
   # gem 'guard-spork'
