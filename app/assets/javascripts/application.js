@@ -14,6 +14,12 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+// require jquery.waypoints
+// require infinite
+//= require search
 // require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+});
+

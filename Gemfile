@@ -24,6 +24,7 @@ gem 'seedbank'
 gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'virtus'
 
 group :development do
   platforms :mri do
