@@ -9,11 +9,13 @@
 #       # alert 'howdy'
 #       notify 'Page Bottom found'
 
-
 jQuery ->
-  $(window).scroll ->
-    if $(window).scrollTop() > $(document).height() - $(window).height() - 50
-      url = $('.pagination').attr('href')
-      $.getScript($('.pagination .next_page').attr('href'))
-      # alert('near bottom')
-      # console.log 'bottom'
+  if $('.pagination').length
+    $(window).scroll ->
+      if $(window).scrollTop() > $(document).height() - $(window).height() - 1
+        url = $('.pagination .next_page').attr('href')
+        $('.pagination').text('loading...')
+        $.getScript(url)
+        # alert('near bottom')
+        # console.log 'bottom'
+    $(window).scroll()
