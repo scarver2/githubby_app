@@ -13,7 +13,7 @@ http://foundation.zurb.com/
 http://foundation.zurb.com/templates/banded.html
 
 ZURB Fonts are nice too!
-
+http://zurb.com/playground/foundation-icon-fonts-3
 
 Omniauth inspiration by Natasha the Robot
 http://natashatherobot.com/rails-omniauth-github-tutorial/

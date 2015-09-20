@@ -18,15 +18,11 @@ Authentication
 ## Developer Notes
 
 ### Setup
+
 bundle exec rake db:setup
-... enviroment variables ...
+Enviroment variables are stored in config/application.yml
 
 ### Quality
-guard
+During development, run bundle exec guard for real-time bug reporting.
 
-On commit, Travis CI will test and deploy to Heroku
-
-## Research
-
-http://natashatherobot.com/rails-omniauth-github-tutorial/
-
+On commit, Travis CI will test and deploy to Heroku on success.
