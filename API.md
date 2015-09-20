@@ -1,5 +1,54 @@
 # API Examples
 
+## OAuth
+
+{"provider"=>"github",
+ "uid"=>"2336088",
+ "info"=>
+  {"nickname"=>"scarver2",
+   "email"=>"stan@a1webconsulting.com",
+   "name"=>"Stan Carver II",
+   "image"=>"https://avatars.githubusercontent.com/u/2336088?v=3",
+   "urls"=>
+    {"GitHub"=>"https://github.com/scarver2", "Blog"=>"www.a1webconsulting.com"}},
+ "credentials"=>
+  {"token"=>"0c644dfd0bd8eebae9a3263d59029d0b14acc05f", "expires"=>false},
+ "extra"=>
+  {"raw_info"=>
+    {"login"=>"scarver2",
+     "id"=>2336088,
+     "avatar_url"=>"https://avatars.githubusercontent.com/u/2336088?v=3",
+     "gravatar_id"=>"",
+     "url"=>"https://api.github.com/users/scarver2",
+     "html_url"=>"https://github.com/scarver2",
+     "followers_url"=>"https://api.github.com/users/scarver2/followers",
+     "following_url"=>"https://api.github.com/users/scarver2/following{/other_user}",
+     "gists_url"=>"https://api.github.com/users/scarver2/gists{/gist_id}",
+     "starred_url"=>"https://api.github.com/users/scarver2/starred{/owner}{/repo}",
+     "subscriptions_url"=>"https://api.github.com/users/scarver2/subscriptions",
+     "organizations_url"=>"https://api.github.com/users/scarver2/orgs",
+     "repos_url"=>"https://api.github.com/users/scarver2/repos",
+     "events_url"=>"https://api.github.com/users/scarver2/events{/privacy}",
+     "received_events_url"=>"https://api.github.com/users/scarver2/received_events",
+     "type"=>"User",
+     "site_admin"=>false,
+     "name"=>"Stan Carver II",
+     "company"=>"A1 Web Consulting",
+     "blog"=>"www.a1webconsulting.com",
+     "location"=>"Pensacola, FL",
+     "email"=>nil,
+     "hireable"=>nil,
+     "bio"=>nil,
+     "public_repos"=>56,
+     "public_gists"=>7,
+     "followers"=>4,
+     "following"=>0,
+     "created_at"=>"2012-09-13T02:06:06Z",
+     "updated_at"=>"2015-09-20T02:32:49Z"}}}
+
+
+## Search API
+
 g = Github.repos.list user: 'ryanb', per_page: 1
 
 <Hashie::Mash
