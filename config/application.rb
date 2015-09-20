@@ -5,6 +5,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# GitHubby Application
+# When the wife needs something done, it's time to Git Hubby.
 module GitHubby
   # GitHubby Application
   class Application < Rails::Application
@@ -23,4 +25,6 @@ module GitHubby
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
+
+  VERSION = `git describe --always` || ''
 end

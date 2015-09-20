@@ -1,0 +1,4 @@
+- cache 'git_log', expires_in: 5.minutes do
+  .row
+    %pre
+      = %x(git log --decorate)

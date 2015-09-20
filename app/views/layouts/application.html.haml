@@ -5,19 +5,19 @@
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
     %title= content_for?(:title) ? yield(:title) : 'GitHubby'
     %meta{ description: 'If Octocat is a girl, this is where she would git her husband.' }
-    %link{href: '/opensearch.xml', rel: 'search', title: 'GitHubby', type: 'application/opensearchdescription+xml'}
-    %link{href: 'https://github.com/fluidicon.png', rel: 'fluid-icon', title: 'GitHub'}
-    %link{href: 'https://github.com/apple-touch-icon-114.png', rel: 'apple-touch-icon', sizes: '57x57'}
-    %link{href: 'https://github.com/apple-touch-icon-114.png', rel: 'apple-touch-icon', sizes: '114x114'}
-    %link{href: 'https://github.com/apple-touch-icon-144.png', rel: 'apple-touch-icon', sizes: '72x72'}
-    %link{href: 'https://github.com/apple-touch-icon-144.png', rel: 'apple-touch-icon', sizes: '144x144'}
-    = stylesheet_link_tag 'application'
+    %link{ href: '/opensearch.xml', rel: 'search', title: 'GitHubby', type: 'application/opensearchdescription+xml' }
+    %link{ href: 'https://assets-cdn.github.com/favicon.ico', rel: 'icon', type: 'image/x-icon' }
+    %link{ href: 'https://github.com/fluidicon.png', rel: 'fluid-icon', title: 'GitHub' }
+    - %w(57 72 114 144).each do |size|
+      %link{ href: "https://github.com/apple-touch-icon-#{size}.png", rel: 'apple-touch-icon', sizes: "#{size}x#{size}" }
+    = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'vendor/modernizr'
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tag
   %body
     = render 'fork_me'
     = render 'header'
     = render 'flash'
+    = render 'search'
     = yield
     = render 'footer'
