@@ -22,7 +22,7 @@ class SearchResult
     @q = attributes[:q]
   end
 
-  def persisted?
-    false
-  end
+  # def persisted?
+  #   false
+  # end
 end

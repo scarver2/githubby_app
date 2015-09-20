@@ -12,9 +12,18 @@ Use ZURB Foundation 5 for a great responsive experience
 http://foundation.zurb.com/
 http://foundation.zurb.com/templates/banded.html
 
+ZURB Foundation Helper
+https://github.com/sgruhier/foundation_rails_helper
+
 ZURB Fonts are nice too!
 http://zurb.com/playground/foundation-icon-fonts-3
 
 Omniauth inspiration by Natasha the Robot
 http://natashatherobot.com/rails-omniauth-github-tutorial/
 http://natashatherobot.com/rails-test-omniauth-sessions-controller/
+
+RSpec Omniauth Controller Spec
+https://gist.github.com/delphaber/d898152eee04cea4964f
+
+RSpec Omniauth Feature Spec
+https://github.com/lucassus/locomotive/blob/master/spec/features/user_facebook_sign_in_spec.rb

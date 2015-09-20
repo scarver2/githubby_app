@@ -5,8 +5,8 @@ ActiveAdmin.register_page 'Dashboard' do
     columns do
       column do
         panel '<i class="fi-torsos-all"></i> Recent Users'.html_safe, style: 'min-height: 340px;' do
-          table_for User.order('id desc').limit(10).each do |user|
-            column(:name) { |resource| link_to(user.name, admin_user_path(resource)) }
+          table_for User.order('id desc').limit(10).each do
+            column(:name) { |resource| link_to(resource.name, admin_user_path(resource)) }
           end
           text_node '<a href="/admin/users">more users...</a>'.html_safe
         end

@@ -1,5 +1,7 @@
 en:
+  access_denied: 'Sorry. Access denied.'
   app_name: 'GitHubby'
+  authentication_failure: 'Sorry. Something went wrong. Try again.'
   logged_in: 'Logged in.'
   logged_out: 'Logged out.'
   login: 'login'
