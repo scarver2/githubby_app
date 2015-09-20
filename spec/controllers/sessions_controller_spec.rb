@@ -40,4 +40,16 @@ RSpec.describe SessionsController, type: :controller do
       expect(response).to redirect_to root_url
     end
   end
+
+  describe '#failure' do
+    it 'should redirect to the home page' do
+      get :failure
+      expect(response).to redirect_to root_url
+    end
+
+    it 'should show flash message' do
+      get :failure
+      expect(flash[:alert]).to eq 'Sorry. Something went wrong. Try again.'
+    end
+  end
 end
