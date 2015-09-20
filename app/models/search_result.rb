@@ -10,8 +10,6 @@
 #     false
 #   end
 # end
-
-
 class SearchResult
   include ActiveModel::Validations
   include ActiveModel::Conversion
@@ -23,7 +21,7 @@ class SearchResult
     @id = attributes[:id]
     @q = attributes[:q]
   end
-  
+
   def persisted?
     false
   end
