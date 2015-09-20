@@ -2,6 +2,7 @@
 
 ## OAuth
 
+
 {"provider"=>"github",
  "uid"=>"2336088",
  "info"=>
@@ -12,7 +13,7 @@
    "urls"=>
     {"GitHub"=>"https://github.com/scarver2", "Blog"=>"www.a1webconsulting.com"}},
  "credentials"=>
-  {"token"=>"0c644dfd0bd8eebae9a3263d59029d0b14acc05f", "expires"=>false},
+  {"token"=>"a1b2c3...", "expires"=>false},
  "extra"=>
   {"raw_info"=>
     {"login"=>"scarver2",
@@ -49,8 +50,16 @@
 
 ## Search API
 
-g = Github.repos.list user: 'ryanb', per_page: 1
 
+curl -ni "https://api.github.com/search/repositories?q=activeadmin" -H 'Accept: application/vnd.github.preview'
+
+require 'httparty'
+url = 'https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc'
+response = HTTParty.get(url)
+
+require 'github_api'
+g = Github.repos.list user: 'peter-murach', sort: 'desc', limit: 1, page: 20
+g = Github.repos.list user: 'ryanb', per_page: 1
 <Hashie::Mash
 archive_url="https://api.github.com/repos/ryanb/abingo/{archive_format}{/ref}"
 assignees_url="https://api.github.com/repos/ryanb/abingo/assignees{/user}"
