@@ -15,10 +15,12 @@ gem 'foundation-rails'
 gem 'foundation_rails_helper'
 gem 'github_api'
 gem 'haml-rails'
+gem 'httparty'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'newrelic_rpm'
 gem 'omniauth-github'
+gem 'pg'
 # gem 'reform'
 gem 'sass-rails', '~> 5.0'
 gem 'seedbank'
@@ -45,13 +47,13 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'quiet_assets'
   gem 'rspec-rails'
-  gem 'sqlite3'
+  # gem 'sqlite3'
 end
 
 group :production do
+  gem 'passenger'
   gem 'rails_12factor'
-  gem 'pg'
-  gem 'thin'
+  # gem 'thin'
 end
 
 group :test do
