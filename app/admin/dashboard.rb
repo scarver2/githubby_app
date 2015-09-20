@@ -39,7 +39,7 @@ ActiveAdmin.register_page 'Dashboard' do
       column do
         panel '<i class="fi-battery-full"></i> System Performance'.html_safe do
           div do
-            text_node %(<iframe src="https://rpm.newrelic.com/public/charts/6VooNO2hKWB" width="100%" height="300" scrolling="no" frameborder="no"></iframe>).html_safe
+            text_node %(<iframe src="https://rpm.newrelic.com/public/charts/fQPSvXcFnU2" style="border: 5px solid white;" width="99%" height="300" scrolling="no" frameborder="no"></iframe>).html_safe
           end
         end
       end
