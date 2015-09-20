@@ -42,6 +42,7 @@ end
 group :development, :test do
   gem 'guard-reek', github: 'yld/guard-reek'
   gem 'pry-byebug'
+  gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'sqlite3'
 end
