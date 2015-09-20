@@ -6,7 +6,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 # GitHubby Application
-# When you're wife needs something done, it's time to Git Hubby.
+# When the wife needs something done, it's time to Git Hubby.
 module GitHubby
   # GitHubby Application
   class Application < Rails::Application
