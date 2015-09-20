@@ -27,3 +27,6 @@ https://gist.github.com/delphaber/d898152eee04cea4964f
 
 RSpec Omniauth Feature Spec
 https://github.com/lucassus/locomotive/blob/master/spec/features/user_facebook_sign_in_spec.rb
+
+Infinite Scroll
+http://railscasts.com/episodes/114-endless-page-revised
