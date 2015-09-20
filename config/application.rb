@@ -5,6 +5,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# GitHubby Application
+# When you're wife needs something done, it's time to Git Hubby.
 module GitHubby
   # GitHubby Application
   class Application < Rails::Application
