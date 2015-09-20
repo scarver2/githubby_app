@@ -29,3 +29,6 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    placeholders:
+      search_form:
+        q: 'Search'

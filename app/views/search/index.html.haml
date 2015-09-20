@@ -1,8 +1,5 @@
 .row
   .large-12.columns
-    = render partial: 'form', locals: { search_form: @search_form }
-.row
-  .large-12.columns
     #results
       %ul
         = render @search_form.result
@@ -10,6 +7,4 @@
         /   %li
         /     = record.id
         /     = record.name
-          
-    .pagination
-      = link_to 'Next', search_path(page: params[:page] ? params[:page].to_i + 1 : 1  ), class: 'next_page'
+      = render partial: 'pagination', locals: { search_form: @search_form }

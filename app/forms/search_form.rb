@@ -6,29 +6,34 @@ class SearchForm # < Reform::Form
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  # property :q
-  # validates :q, presence: true
+  MAX_PAGES = 3
 
-  # attr_accessor :q
-  attr_reader :q
-
-  # def initialize(args = {})
-  #   self.q = args[:q]
-  # end
+  attr_reader :q, :page
 
   def initialize(attributes = {})
-    # self.q = attributes[:q]
-    # send('q=')
     @q = attributes[:q]
-    # attributes.each do |name, value|
-    #   send("#{name}=", value)
-    # end
+    @page = attributes[:page].to_i > 1 ? attributes[:page].to_i : 1
+  end
+
+  delegate :current_page, to: :page
+
+  def previous_page
+    return unless q.present?
+    return if @page == 1
+    @page - 1
+  end
+
+  def next_page
+    return unless q.present?
+    return unless result.present?
+    return unless @page < MAX_PAGES
+    @page + 1
   end
 
   def result
-    # return [] # unless q.present?
-    # TODO: implement cache logic
-    # (1..10).to_a.collect { OpenStruct.new(id: Random.rand(10_000), name: Faker::Name.name) }
-    (1..10).to_a.collect { SearchResult.new(id: Random.rand(10_000), name: Faker::Name.name) }
+    # binding.pry
+    return [] unless q.present?
+    return [] if page > MAX_PAGES 
+    @result ||= (1..10).to_a.collect { SearchResult.new(id: Random.rand(10_000), name: Faker::Name.name) }
   end
 end

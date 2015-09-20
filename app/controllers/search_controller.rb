@@ -6,6 +6,7 @@ class SearchController < ApplicationController
   protect_from_forgery except: :index
 
   def index
+    # sleep 2
   end
 
   private
