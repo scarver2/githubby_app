@@ -31,9 +31,8 @@ class SearchForm # < Reform::Form
   end
 
   def result
-    # binding.pry
     return [] unless q.present?
-    return [] if page > MAX_PAGES 
+    return [] if page > MAX_PAGES
     @result ||= (1..10).to_a.collect { SearchResult.new(id: Random.rand(10_000), name: Faker::Name.name) }
   end
 end

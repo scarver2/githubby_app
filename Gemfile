@@ -18,14 +18,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'newrelic_rpm'
 gem 'omniauth-github'
-gem 'reform'
+# gem 'reform'
 gem 'sass-rails', '~> 5.0'
 gem 'seedbank'
 # gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
-# gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'virtus'
+# gem 'virtus'
 
 group :development do
   platforms :mri do

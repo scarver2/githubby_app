@@ -8,7 +8,4 @@ module SearchHelper
     }
     search_path(params)
   end
-  
-  # def search_path(search_form)
-  # end
 end

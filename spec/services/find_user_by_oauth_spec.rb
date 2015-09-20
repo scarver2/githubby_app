@@ -4,7 +4,6 @@ RSpec.describe FindUserByOauth, type: :model do
   let(:auth) { FactoryGirl.build(:omniauth_github_hash) }
 
   it 'finds user' do
-    # binding.pry
     CreateUserFromOauth.call(auth)
     user = FindUserByOauth.call(auth)
     expect(user.name).to eq 'Bubba Gump'

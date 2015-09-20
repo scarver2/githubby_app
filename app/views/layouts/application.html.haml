@@ -10,9 +10,9 @@
     %link{ href: 'https://github.com/fluidicon.png', rel: 'fluid-icon', title: 'GitHub' }
     - %w(57 72 114 144).each do |size|
       %link{ href: "https://github.com/apple-touch-icon-#{size}.png", rel: 'apple-touch-icon', sizes: "#{size}x#{size}" }
-    = stylesheet_link_tag 'application', media: 'all' #, 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'vendor/modernizr'
-    = javascript_include_tag 'application' # , 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tag
   %body
     = render 'fork_me'
