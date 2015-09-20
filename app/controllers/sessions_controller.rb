@@ -2,7 +2,7 @@
 # Provides authentication functions
 class SessionsController < ApplicationController
   def create
-    user = FindUserByOauth.call(auth) || CreateUserFromOauth.call(auth)
+    user = FindUserByOauth.call(auth_hash) || CreateUserFromOauth.call(auth_hash)
     session[:user_id] = user.id
     redirect_to root_url, notice: I18n.t('logged_in')
   end
@@ -12,9 +12,13 @@ class SessionsController < ApplicationController
     redirect_to root_url, notice: I18n.t('logged_in')
   end
 
+  def failure
+    redirect_to root_url, alert: I18n.t('authentication_failure')
+  end
+
   private
 
-  def auth
+  def auth_hash
     request.env['omniauth.auth']
   end
 end
