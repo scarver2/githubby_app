@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: 'sessions#failure'
-  get '/logout' => 'sessions#destroy', as: :logout
-  get '/search' => 'search#index', as: :search
+  get '/logout', to: 'sessions#destroy', as: :logout
+  get '/search', to: 'search#index', as: :search
+  get '/log', to: 'home#log', as: :log
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
