@@ -12,7 +12,7 @@ class GitHub
   # 'https://api.github.com/search/repositories?q=tetris+language:assembly&sort=stars&order=desc'
   def repositories(q, options = {})
     options.merge!(q: q)
-    binding.pry
+    # binding.pry
     self.class.get('/search/repositories', options)
   end
 end

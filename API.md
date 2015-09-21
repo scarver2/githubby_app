@@ -58,6 +58,7 @@ url = 'https://api.github.com/search/repositories?q=tetris+language:assembly&sor
 response = HTTParty.get(url)
 
 require 'github_api'
+g = Github.repos.list user: 'peter-murach', sort: 'desc', limit: 1, page: 1, language: 'python'
 g = Github.repos.list user: 'peter-murach', sort: 'desc', limit: 1, page: 20
 g = Github.repos.list user: 'ryanb', per_page: 1
 <Hashie::Mash

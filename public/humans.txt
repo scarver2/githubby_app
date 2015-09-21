@@ -8,6 +8,10 @@ Inspired by Arturo C. at Bookshout! https://gist.github.com/arturo-c/b7854caa4d8
 
 GitHubby font http://vllg.com/constellation/apex-sans
 
+GitHub Search API
+https://www.codecademy.com/forum_questions/5182f2a05307399592000915
+https://github.com/peter-murach/github
+
 Use ZURB Foundation 5 for a great responsive experience
 http://foundation.zurb.com/
 http://foundation.zurb.com/templates/banded.html

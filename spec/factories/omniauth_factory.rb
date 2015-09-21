@@ -7,6 +7,9 @@ FactoryGirl.define do
       'email' => 'bubba@gump.com',
       'nickname' => 'bubba'
     }}
+    credentials {{
+      'token' => '0987654321fedcba'
+    }}
     # 'extra' => {
     #   'raw_info' =>
     #     { 'location' => 'New Orleans',

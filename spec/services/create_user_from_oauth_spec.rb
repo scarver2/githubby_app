@@ -10,6 +10,7 @@ RSpec.describe CreateUserFromOauth, type: :model do
     user = User.last
     expect(user.provider).to eq 'github'
     expect(user.uid).to eq '123456'
+    expect(user.github_token).to eq '0987654321fedcba'
     expect(user.name).to eq 'Bubba Gump'
   end
 end

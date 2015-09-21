@@ -2,7 +2,7 @@
 # Provides authentication functions
 class SessionsController < ApplicationController
   def create
-    binding.pry
+    # binding.pry
     user = FindUserByOauth.call(auth_hash) || CreateUserFromOauth.call(auth_hash)
     session[:user_id] = user.id
     redirect_to root_url # , notice: I18n.t('logged_in')

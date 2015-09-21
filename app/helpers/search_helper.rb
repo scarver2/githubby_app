@@ -1,5 +1,4 @@
 # SearchHelper
-# Use Draper where possible
 module SearchHelper
   def search_path_for(search_form, attrs)
     params = {
