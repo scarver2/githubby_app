@@ -1,0 +1,8 @@
+# Environment variables loaded by Figaro gem.
+
+# Reads the current tag for this release.
+APPLICATION_VERSION: <%= `git describe --always` %>
+
+# GitHub API OAuth
+GITHUB_CLIENT_ID: 81...
+GITHUB_CLIENT_SECRET: 99...
