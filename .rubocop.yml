@@ -13,3 +13,7 @@ AllCops:
 
 LineLength:
   Enabled: false # stupid spec, It's the 21st Century and wide-screen monitors
+
+Metrics/AbcSize:
+  Max: 17
+  
