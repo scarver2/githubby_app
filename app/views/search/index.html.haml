@@ -1,27 +1,8 @@
 .row
   .large-12.columns
     %table#results
-      %thead
-        %tr
-          %th= I18n.t('name')
-          %th
-            %button.button.dropdown{aria: { controls: 'drop1', expanded: false }, data: { dropdown: 'drop1', href: '#' }}= I18n.t('language')
-            %br
-            %ul#drop1.f-dropdown{ aria: { hidden: true }, data: {'dropdown-content' => '' }}
-              - @search_form.languages.each do |language|
-                %li
-                  %a{href: '#'}= language
-          %th
-            - if @search_form.sort == 'desc'
-              = link_to '#' do
-                = I18n.t('stargazers_count')
-                %i.fi-arrow-up
-            - else
-              = link_to '#' do
-                = I18n.t('stargazers_count')
-                %i.fi-arrow-down
+      = render partial: 'table_header', locals: { search_form: @search_form }
       %tbody
         = render @search_form.result
   
-    .pagination
-      = link_to 'Next', search_path(page: params[:page] ? params[:page].to_i + 1 : 1  ), class: 'next_page'
+    = render partial: 'pagination', locals: { search_form: @search_form }

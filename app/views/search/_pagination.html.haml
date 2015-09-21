@@ -1,9 +1,10 @@
-/ TODO: decorate Search results with URL functions
 %ul.pagination
-  / = search_form.previous_page
-  / - if search_form.previous_page
-  /   = link_to I18n.t('previous'), search_path_for(search_form, page: search_form.previous_page), class: 'prev'
-
-  - if search_form.next_page
-    %li.arrow
-      = link_to '&raquo;', search_path_for(search_form, page: search_form.next_page), class: 'next'
+  %li.arrow{class: "#{'unavailable' if search_form.page == 1}"}
+    = link_to search_path_for(search_form, page: search_form.previous_page), class: 'prev' do
+      &laquo;
+  - 1.upto(search_form.total_count / 30) do |n|
+    %li{class: "#{'current' if search_form.page == n}"}
+      = link_to n, search_path_for(search_form, page: n)
+  %li.arrow{class: "#{'unavailable' unless search_form.next_page}"}
+    = link_to search_path_for(search_form, page: search_form.next_page), class: 'next' do
+      &raquo;

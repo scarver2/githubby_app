@@ -1,0 +1,21 @@
+%thead
+  %tr
+    %th= I18n.t('name')
+    %th
+      %button.button.dropdown{aria: { controls: 'drop1', expanded: false }, data: { dropdown: 'drop1', href: '#' }}= I18n.t('language')
+      %br
+      %ul#drop1.f-dropdown{ aria: { hidden: true }, data: {'dropdown-content' => '' }}
+        - if search_form.language
+          %li= link_to '(none)', search_path_for(search_form, language: '', page: 1)
+        - else
+          - search_form.languages.each do |language|
+            %li= link_to language, search_path_for(search_form, language: language, page: 1)
+    %th
+      - if search_form.order == 'desc'
+        = link_to search_path_for(search_form, order: 'asc', page: 1, sort: 'stars') do
+          = I18n.t('stargazers_count')
+          %i.fi-arrow-down
+      - else
+        = link_to search_path_for(search_form, order: 'desc', page: 1, sort: 'stars') do
+          = I18n.t('stargazers_count')
+          %i.fi-arrow-up

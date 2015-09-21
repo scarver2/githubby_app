@@ -11,4 +11,4 @@ en:
   name: 'name'
   next: 'next'
   previous: 'previous'
-  stargazers_count: 'watchers'
+  stargazers_count: 'stars'

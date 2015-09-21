@@ -6,11 +6,12 @@ class SearchForm # < Reform::Form
   include ActiveModel::Conversion
   extend ActiveModel::Naming
 
-  MAX_PAGES = 3
+  MAX_PAGES = 10
 
   attr_reader :language, :order, :page, :q, :sort, :token
 
   def initialize(attributes = {})
+    @language = attributes[:language] if attributes[:language].present?
     @order = attributes[:order] == 'asc' ? 'asc' : 'desc'
     @page = attributes[:page].to_i > 1 ? attributes[:page].to_i : 1
     @q = attributes[:q]
@@ -49,12 +50,20 @@ class SearchForm # < Reform::Form
 
   private
 
+  def query
+    if language
+      "#{q} language:#{language.downcase}"
+    else
+      q
+    end
+  end
+
   def parsed_response
     return [] unless response.present?
     response['items'].collect { |e| SearchResult.new(SearchResultConverter.from_git_hub(e)) }
   end
 
   def response
-    @response ||= GetReposFromGitHub.call(token, language: language, q: q, order: order, sort: sort)
+    @response ||= GetReposFromGitHub.call(token, limit: 2, page: page, q: query, order: order, sort: sort)
   end
 end
