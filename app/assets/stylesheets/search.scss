@@ -1,0 +1,24 @@
+$header-text-color: #222;
+
+#results {
+  width: 100%;
+
+  th {
+    color: $header-text-color;
+    text-transform: capitalize;
+    a {
+      color: $header-text-color;
+    }
+    button {
+      background-color: transparent;
+      color: $header-text-color;
+      font-size: 0.875rem;
+      font-weight: bold;
+      margin: 0;
+      padding: 0.5rem inherit 0.625rem;
+    }
+    .dropdown.button::after, button.dropdown::after {
+        border-color: $header-text-color transparent transparent;
+    }
+  }
+}

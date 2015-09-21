@@ -1,2 +1,2 @@
-$('#results ul').append('<%= j render(@search_form.result) %>');
+$('#results tbody').append('<%= j render(@search_form.result) %>');
 $('.pagination').replaceWith('<%= j render(partial: "pagination", locals: { search_form: @search_form }) %>');

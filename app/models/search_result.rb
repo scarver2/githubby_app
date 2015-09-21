@@ -11,15 +11,17 @@
 #   end
 # end
 class SearchResult
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
   extend ActiveModel::Naming
+  include ActiveModel::Conversion
+  # include ActiveModel::Validations
 
-  attr_reader :id, :name
+  attr_reader :id, :language, :name, :stargazers_count
 
   def initialize(attributes = {})
     @id = attributes[:id]
-    @q = attributes[:q]
+    @language = attributes[:language]
+    @name = attributes[:name]
+    @stargazers_count = attributes[:stargazers_count]
   end
 
   # def persisted?

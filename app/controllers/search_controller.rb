@@ -12,6 +12,6 @@ class SearchController < ApplicationController
   private
 
   def init_search_form
-    @search_form = SearchForm.new(params)
+    @search_form = SearchFormDecorator.decorate(SearchForm.new(params))
   end
 end

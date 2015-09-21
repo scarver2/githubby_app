@@ -3,9 +3,12 @@ en:
   app_name: 'GitHubby'
   app_version: <%= %x(git tag) %>
   authentication_failure: 'Sorry. Something went wrong. Try again.'
+  language: 'language'
   logged_in: 'Logged in.'
   logged_out: 'Logged out.'
   login: 'login'
   logout: 'logout'
+  name: 'name'
   next: 'next'
   previous: 'previous'
+  stargazers_count: 'watchers'

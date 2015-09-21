@@ -1,13 +1,9 @@
 /*
  *= require foundation_and_overrides
+ *= require github_ribbon
+ *= require search
  *= require_self
 */
 
 @import 'foundation-icons';
 
-.fork_me {
-  border: 0;
-  left: 0;
-  position: absolute;
-  top: 0;
-}
