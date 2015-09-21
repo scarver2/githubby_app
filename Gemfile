@@ -45,7 +45,8 @@ group :development, :test do
 end
 
 group :production do
-  gem 'dalli'
+  # gem 'dalli'
+  # gem 'kgio' # performance for Dalli
   gem 'passenger'
   gem 'pg'
   gem 'rails_12factor'
