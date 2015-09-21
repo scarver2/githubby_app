@@ -6,12 +6,12 @@ class SearchController < ApplicationController
   protect_from_forgery except: :index
 
   def index
-    # sleep 2
   end
 
   private
 
   def init_search_form
-    @search_form = SearchFormDecorator.decorate(SearchForm.new(params))
+    # @search_form = SearchFormDecorator.decorate(SearchForm.new(params.merge!(token: current_user.github_token)))
+    @search_form = SearchForm.new(params.merge!(token: current_user.github_token))
   end
 end

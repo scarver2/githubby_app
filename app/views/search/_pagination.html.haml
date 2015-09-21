@@ -1,9 +1,9 @@
 / TODO: decorate Search results with URL functions
-.pagination
+%ul.pagination
   / = search_form.previous_page
   / - if search_form.previous_page
   /   = link_to I18n.t('previous'), search_path_for(search_form, page: search_form.previous_page), class: 'prev'
-    
+
   - if search_form.next_page
-    = link_to I18n.t('next'), search_path_for(search_form, page: search_form.next_page), class: 'next'
-  / = search_form.next_page
+    %li.arrow
+      = link_to '&raquo;', search_path_for(search_form, page: search_form.next_page), class: 'next'

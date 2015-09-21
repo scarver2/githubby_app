@@ -1,0 +1,37 @@
+.top-bar {
+  background-color: #000;
+  color: #fff !important;
+  font-family: 'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif !important;
+  font-size: 0.8125rem !important;
+  line-height: 45px;
+  a, i {
+    color: #fff !important;
+  }
+  .button {
+    top: 0 !important;
+  }
+}
+
+.bottom-bar {
+  background-color: #000;
+  color: #fff !important;
+  font-family: 'Helvetica Neue','Helvetica',Helvetica,Arial,sans-serif !important;
+  font-size: 0.8125rem !important;
+  line-height: 45px;
+}
+
+::-webkit-input-placeholder {
+  color: #008cba;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #008cba;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #008cba;
+}
+
+:-ms-input-placeholder {
+  color: #008cba;
+}

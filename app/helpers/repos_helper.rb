@@ -1,3 +1,0 @@
-# ReposHelper
-module ReposHelper
-end

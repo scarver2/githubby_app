@@ -1,9 +1,12 @@
-.row
+.row.top-bar
   .large-3.columns
-    %h1
-      = link_to '/' do
-        = image_tag 'githubby_logo.png'
-  .large-9.columns
-    %ul.button-group.right
-      %li
-        = render 'login'
+    = link_to '/' do
+      = image_tag 'githubby_logo_inverted.png'
+  .large-6.columns
+    = render 'search'
+  .large-3.columns
+    / %ul.button-group.right
+    /   %li
+    /     = render 'login'
+    .right
+      = render 'login'
