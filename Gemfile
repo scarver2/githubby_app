@@ -14,7 +14,6 @@ gem 'figaro'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'foundation_rails_helper'
-gem 'github_api'
 gem 'haml-rails'
 gem 'httparty'
 gem 'jbuilder', '~> 2.0'
@@ -22,13 +21,10 @@ gem 'jquery-rails'
 gem 'newrelic_rpm'
 gem 'omniauth-github'
 gem 'pg'
-# gem 'reform'
 gem 'sass-rails', '~> 5.0'
 gem 'seedbank'
-# gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form'
 gem 'uglifier', '>= 1.3.0'
-# gem 'virtus'
 
 group :development do
   platforms :mri do
@@ -39,8 +35,6 @@ group :development do
   gem 'bullet'
   gem 'guard'
   gem 'i18n-tasks'
-  # gem 'spring'
-  # gem 'web-console', '~> 2.0'
 end
 
 group :development, :test do
@@ -48,13 +42,12 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'quiet_assets'
   gem 'rspec-rails'
-  # gem 'sqlite3'
 end
 
 group :production do
+  gem 'dalli'
   gem 'passenger'
   gem 'rails_12factor'
-  # gem 'thin'
 end
 
 group :test do
@@ -64,7 +57,6 @@ group :test do
   gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'guard-rubocop'
-  # gem 'guard-spork'
   gem 'rspec-expectations', require: 'rspec/expectations'
   gem 'simplecov', require: false
 end

@@ -8,19 +8,19 @@ class SearchForm # < Reform::Form
 
   MAX_PAGES = 3
 
-  attr_reader :filter, :order, :page, :q, :sort
+  attr_reader :language, :order, :page, :q, :sort, :token
 
   def initialize(attributes = {})
-    @q = attributes[:q]
-    @page = attributes[:page].to_i > 1 ? attributes[:page].to_i : 1
     @order = attributes[:order] == 'asc' ? 'asc' : 'desc'
+    @page = attributes[:page].to_i > 1 ? attributes[:page].to_i : 1
+    @q = attributes[:q]
     @sort = attributes[:sort].present? ? attributes[:sort] : 'stars'
+    @token = attributes[:token]
   end
 
   delegate :current_page, to: :page
 
   def languages
-    # %w(C C# C++ CSS HTML Java JavaScript Perl PHP Python Ruby).sort
     parsed_response.collect(&:language).compact.uniq.sort
   end
 
@@ -49,25 +49,12 @@ class SearchForm # < Reform::Form
 
   private
 
-  def response
-    @response ||= GetReposFromGitHub.call('d34f3724be40d543aeeec74e9ec1952c583f0d0a', q: q, order: order, sort: sort)
-    # TODO: language:assembly&sort=&order=desc
+  def parsed_response
+    return [] unless response.present?
+    response['items'].collect { |e| SearchResult.new(SearchResultConverter.from_git_hub(e)) }
   end
 
-  def parsed_response
-    # res['items'].first['stargazers_count']
-    # res['items'].first['language']
-    # res['items'].first['full_name']
-    # res['items'].first['id']
-    # res['items'].collect { |e| e['id'] }
-    # @parsed_response ||= (1..10).to_a.collect do
-    #   SearchResult.new(
-    #     id: Random.rand(10_000),
-    #     language: languages.sample,
-    #     name: Faker::Name.name,
-    #     stargazers_count: Random.rand(1_000)
-    #   )
-    # end
-    response['items'].collect { |e| SearchResult.new(SearchResultConverter.from_git_hub(e)) }
+  def response
+    @response ||= GetReposFromGitHub.call(token, language: language, q: q, order: order, sort: sort)
   end
 end
