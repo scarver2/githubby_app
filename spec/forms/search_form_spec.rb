@@ -12,16 +12,20 @@ RSpec.describe SearchForm, type: :model do
   
   describe 'methods' do
     before(:each) do
-      GetReposFromGitHub.stub(:call).and_return({'total_count' => 1, 'items' => [{'id' => 1, 'full_name' => 'My/Repo', 'language' => 'Ruby'}]})
+      GetReposFromGitHub.stub(:call).and_return({'total_count' => 1, 'items' => [{'id' => 1, 'full_name' => 'My/Repo', 'language' => 'Ruby', 'stargazers_count' => 1}]})
     end
 
     it 'extracts languages from response' do
       expect(subject.languages).to eq(['Ruby'])
     end
 
-    # it 'extracts q from response' do
-    #   expect(subject.q).to eq(1)
-    # end
+    it 'preps query when language is filtered' do
+      subject = SearchForm.new(language: 'Ruby', q: 'repo')
+      expect(subject.result.first.id).to eq(1)
+      expect(subject.result.first.language).to eq('Ruby')
+      expect(subject.result.first.name).to eq('My/Repo')
+      expect(subject.result.first.stargazers_count).to eq(1)
+    end
 
     it 'extracts result from response' do
       expect(subject.result).to eq([])
