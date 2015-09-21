@@ -5,9 +5,9 @@
         %tr
           %th= I18n.t('name')
           %th
-            %button.button.dropdown{"aria-controls" => "drop1", "aria-expanded" => "false", "data-dropdown" => "drop1", :href => "#"}= I18n.t('language')
+            %button.button.dropdown{aria: { controls: 'drop1', expanded: false }, data: { dropdown: 'drop1', href: '#' }}= I18n.t('language')
             %br
-            %ul#drop1.f-dropdown{"aria-hidden" => "true", "data-dropdown-content" => ""}
+            %ul#drop1.f-dropdown{ aria: { hidden: true }, data: {'dropdown-content' => '' }}
               - @search_form.languages.each do |language|
                 %li
                   %a{href: '#'}= language

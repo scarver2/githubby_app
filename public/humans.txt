@@ -10,7 +10,6 @@ GitHubby font http://vllg.com/constellation/apex-sans
 
 GitHub Search API
 https://www.codecademy.com/forum_questions/5182f2a05307399592000915
-https://github.com/peter-murach/github
 
 Infinite Scroll
 http://railscasts.com/episodes/114-endless-page-revised

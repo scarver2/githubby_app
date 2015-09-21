@@ -1,15 +1,17 @@
 # Get Repositories From GitHub
 # Get repositories from GitHub using user's auth token.
+# Accepts optional parameters
 class GetReposFromGitHub
   class << self
-    def call(token)
-      HTTParty.get(
-        'https://api.github.com/user',
+    def call(token, options = {})
+      headers = {
         headers: {
           'Authorization' => "token #{token}",
           'User-Agent' => 'githubby'
         }
-      )
+      }
+      url = 'https://api.github.com/search/repositories?'.concat(options.to_query)
+      HTTParty.get(url, headers)
     end
   end
 end

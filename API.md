@@ -58,9 +58,14 @@ url = 'https://api.github.com/search/repositories?q=tetris+language:assembly&sor
 response = HTTParty.get(url)
 
 require 'github_api'
-g = Github.repos.list user: 'peter-murach', sort: 'desc', limit: 1, page: 1, language: 'python'
-g = Github.repos.list user: 'peter-murach', sort: 'desc', limit: 1, page: 20
-g = Github.repos.list user: 'ryanb', per_page: 1
+response = Github.repos.list user: 'scarver2', sort: 'desc', limit: 1, page: 1, language: 'Ruby'
+response = Github.repos.list user: 'scarver2', sort: 'desc', limit: 1, page: 20
+response = Github.repos.list user: 'scarver2', per_page: 1
+response = Github.repos.list per_page: 1, oauth_token: ''
+
+github = Github.new oauth_token: token
+github.repos.list
+
 <Hashie::Mash
 archive_url="https://api.github.com/repos/ryanb/abingo/{archive_format}{/ref}"
 assignees_url="https://api.github.com/repos/ryanb/abingo/assignees{/user}"
