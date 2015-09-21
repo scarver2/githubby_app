@@ -11,9 +11,9 @@ class GetReposFromGitHub
         }
       }
       url = 'https://api.github.com/search/repositories?'.concat(options.to_query)
-      # APICache.get("#{token}/#{url}", fail: []) do
-      HTTParty.get(url, headers)
-      # end
+      APICache.get("#{token}/#{url}", fail: []) do
+        HTTParty.get(url, headers)
+      end
     end
   end
 end
