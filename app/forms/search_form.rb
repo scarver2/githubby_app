@@ -22,6 +22,7 @@ class SearchForm # < Reform::Form
   delegate :current_page, to: :page
 
   def languages
+    return [] if parsed_response.blank?
     parsed_response.collect(&:language).compact.uniq.sort
   end
 
