@@ -26,5 +26,5 @@ module GitHubby
     config.active_record.raise_in_transactional_callbacks = true
   end
 
-  VERSION = `git describe --always` || `git tag` || ''
+  VERSION = [`git describe --always`, ENV['APPLICATION_VERSION']].delete_if(&:empty?).first
 end
